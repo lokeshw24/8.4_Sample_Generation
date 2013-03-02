@@ -1,4 +1,8 @@
-/*WHAT PROG DOES :
+/* HOW TO RUN :
+ * 	$ cc <program_name> ;
+ * 	$ ./a.out ;
+ *
+ * WHAT PROG DOES :
  * 	>Example : If given n=3 & r=4 , then it generates this : 1 1 1 1
  * 								 1 1 1 2
  * 								 1 1 1 3
@@ -14,6 +18,10 @@
  * 								 ..
  * 							
  * 	>So it prints all permutations of first 'n' integers, taken 'r' at a time.
+ *
+ * NOTES :
+ * 	>I have not done error_checking on the values of 'n' and 'r', right now assuming that the user
+ * 	of will give it appropriately.
  */
 
 #include<stdio.h>
@@ -39,6 +47,7 @@ void sample_generator( int current_arr_pos ){
 	if( current_arr_pos > (r-1) ) return ;
 
 	if( current_arr_pos == (r-1) ){
+		/*Here instead of using recursion , we can use a loop to print the final column's numbers */
 		while( arr[current_arr_pos] < (n+1)  ){
 			sample_generator(current_arr_pos+1);
 			print_array( arr );
